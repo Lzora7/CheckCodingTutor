@@ -54,7 +54,7 @@ class SimpleUNet(nn.Module):
 
         # ----- Decoder -----
         # level 1
-        u1 = self.up1(b)                 # upsample
+        # u1 = self.up1(b)                 # upsample
         u1 = torch.cat([u1, x2], dim=1)  # skip-connection
         u1 = F.relu(self.dec1_conv1(u1))
         u1 = F.relu(self.dec1_conv2(u1))
